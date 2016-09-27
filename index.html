@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $("form").submit(function() {
+      // $("#fName, #lName").val("")
+      // $("#description").val("Enter Description")
+
+      $("#right_column").append("<div class='card' data-descrip='" + $("#description").val() + "'><h1>" + $("#fName").val() + " " + $("#lName").val() +"</h1>" + "Click for description!" + "</div>")
+
+      $("#fName, #lName").val("")
+      $("#description").val("Enter Description")
+      return false;
+    })
+    // $(".card").on("click", function() {
+    //   console.log("hi")
+    //   // var temp = $(this).html();
+    //   // $(this).val($(this).attr("data-descrip"));
+    //   // $(this).attr("data-descrip", "hi");
+    // })
+  })
+  $(".card").click(function() {
+    var temp = $(this).val();
+    $(this).append($(this).attr("data-descrip"));
+    $(this).attr("data-descrip", temp);
+  // $(document).on("click", function() {
+  //   $(".card").click(function() {
+  //     var temp = $(this).val();
+  //     $(this).text($(this).attr("data-descrip"));
+  //     $(this).attr("data-descrip", temp);
+  //     //console.log("hi");
+  //   }
+  // );
+    // var temp = $(this).html();
+    // $(this).val($(this).attr("data-descrip"));
+    // $(this).attr("data-descrip", "hi");
+  })
+  </script>
+  <div id="wrapper">
+    <div id="left_column">
+      <form action="index.html">
+        First Name: <input type="text" id="fName">
+        Last Name: <input type="text" id="lName">
+        Description:
+        <input type="text" id="description" value="Enter Description">
+      <input type="submit" name="name" value="Add User">
+      </form>
+    </div>
+    <div id="right_column">
+
+    </div>
+  </div>
+<script type="text/javascript">
+  /*  $("#right_column").child("div").click(function() {
+
+      l
+      $(this).toggle() --this is the portion that will show descriptions
+    }) */
+  </script>
+</body>
+</html>
