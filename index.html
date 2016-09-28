@@ -12,38 +12,26 @@
   <script type="text/javascript">
   $(document).ready(function() {
     $("form").submit(function() {
-      // $("#fName, #lName").val("")
-      // $("#description").val("Enter Description")
 
       $("#right_column").append("<div class='card' data-descrip='" + $("#description").val() + "'><h1>" + $("#fName").val() + " " + $("#lName").val() +"</h1>" + "Click for description!" + "</div>")
-
       $("#fName, #lName").val("")
       $("#description").val("Enter Description")
-      return false;
+      return false; //stop page from refreshing, among other things..
     })
-    // $(".card").on("click", function() {
-    //   console.log("hi")
-    //   // var temp = $(this).html();
-    //   // $(this).val($(this).attr("data-descrip"));
-    //   // $(this).attr("data-descrip", "hi");
-    // })
   })
-  $(".card").click(function() {
-    var temp = $(this).val();
-    $(this).append($(this).attr("data-descrip"));
-    $(this).attr("data-descrip", temp);
-  // $(document).on("click", function() {
-  //   $(".card").click(function() {
-  //     var temp = $(this).val();
-  //     $(this).text($(this).attr("data-descrip"));
-  //     $(this).attr("data-descrip", temp);
-  //     //console.log("hi");
-  //   }
-  // );
-    // var temp = $(this).html();
-    // $(this).val($(this).attr("data-descrip"));
-    // $(this).attr("data-descrip", "hi");
+  $(document).on('hover', function() {
+    $(".card:h1").click(function() {
+      console.log("hi");
+    })
   })
+  // $(".card").click(function() {
+  //   $(this).html("Boo!");
+  //   console.log("hi");
+  //   //var temp = $(this).val();
+  //   //$(this).append($(this).attr("data-descrip"));
+  //   //$(this).attr("data-descrip", temp);
+  //
+  // })
   </script>
   <div id="wrapper">
     <div id="left_column">
