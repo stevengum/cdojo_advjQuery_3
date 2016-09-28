@@ -13,10 +13,20 @@
   $(document).ready(function() {
     $("form").submit(function() {
 
-      $("#right_column").append("<div class='card' data-descrip='" + $("#description").val() + "'><h1>" + $("#fName").val() + " " + $("#lName").val() +"</h1>" + "Click for description!" + "</div>")
+      $("#right_column").append("<div class='card'><h1>" + $("#fName").val() + " " + $("#lName").val() +"</h1>" + "<h3 >Click for description! </h3><h2>" + $("#description").val() + "</h2></div>")
       $("#fName, #lName").val("")
       $("#description").val("Enter Description")
-      return false; //stop page from refreshing, among other things..
+      return false;
+    })
+    $(document).on("click", "h1, h3", function() {
+      $(this).toggle();
+      $(this).siblings("h1, h3").toggle();
+      $(this).siblings("h2").toggle();
+    })
+    $(document).on("click", "h2", function () {
+      $(this).toggle();
+      $(this).siblings().toggle();
+
     })
   })
   $(document).on('hover', function() {
@@ -24,14 +34,6 @@
       console.log("hi");
     })
   })
-  // $(".card").click(function() {
-  //   $(this).html("Boo!");
-  //   console.log("hi");
-  //   //var temp = $(this).val();
-  //   //$(this).append($(this).attr("data-descrip"));
-  //   //$(this).attr("data-descrip", temp);
-  //
-  // })
   </script>
   <div id="wrapper">
     <div id="left_column">
@@ -47,12 +49,5 @@
 
     </div>
   </div>
-<script type="text/javascript">
-  /*  $("#right_column").child("div").click(function() {
-
-      l
-      $(this).toggle() --this is the portion that will show descriptions
-    }) */
-  </script>
 </body>
 </html>

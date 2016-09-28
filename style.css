@@ -1,33 +1,9 @@
-*{
+.card{
+  margin: 10px;
+  border: solid 2px darkblue;
+  width: 300px;
+  padding-left: 20px;
 }
-#wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 1024px;
-}
-#left_column{
-  display: inline-block;
-}
-#right_column{
-  display: inline-block;
-  justify-content: flex-end;
-  border: solid 2px black;
-}
-#right_column div{
-  height: 200px;
-  background-color: grey;
-  border: yellow solid 1px;
-  padding: 10px;
-}
-#description{
-  margin-top: 20px;
-  height: 300px;
-  width:270px;
-  display: flex;
-  align-content: flex-start;
-}
-#fName #lName{
-  margin-left: 10px;
-  margin-right: 10px;
+h2{
+  display: none;
 }
